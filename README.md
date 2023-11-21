@@ -1,4 +1,9 @@
 ### Hi there 👋
+My name is Vikrant Thakur. I am a second-year mechatronics engineering student at Toronto Metropolitan University in Toronto, Canada.
+
+🤔 My interests: Robotics Engineering, Electric Vehicle Design and Dynamics, and Manufacturing. 
+📧 Contact me @ v1thakur@torontomu.ca
+
 
 <!--
 **RealVikrantThakur/RealVikrantThakur** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
