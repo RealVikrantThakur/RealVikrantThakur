@@ -1,0 +1,40 @@
+If the number is not prime, then the output should be an array of all the factors of the number.
+
+def factors_or_prime(number):
+    # 0 and 1 are not prime numbers
+    if number < 2:
+        return [f"{number} is not a prime number. It has no factors."]
+    
+    # 2 and 3 are prime numbers
+    if number in (2, 3):
+        return [f"{number} is a prime number."]
+    
+    # Check for divisibility by 2 or 3
+    if number % 2 == 0 or number % 3 == 0:
+        return find_factors(number)
+    
+    # Check for divisibility by numbers greater than 3 up to the square root of the input number
+    i = 5
+    while i * i <= number:
+        if number % i == 0 or number % (i + 2) == 0:
+            return find_factors(number)
+        i += 6
+    
+    # If no divisor is found, the number is prime
+    return [f"{number} is a prime number."]
+
+def find_factors(number):
+    factors = []
+    for i in range(1, int(number**0.5) + 1):
+        if number % i == 0:
+            factors.append(i)
+            if i != number // i:
+                factors.append(number // i)
+    return factors
+
+# Example usage
+input_number = int(input("Enter a number: "))
+result = factors_or_prime(input_number)
+for item in result:
+    print(item)
+
