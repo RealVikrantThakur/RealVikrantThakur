@@ -1,0 +1,32 @@
+Write an algorithm to check whether a given input number is prime.
+
+def is_prime(number):
+    # 0 and 1 are not prime numbers
+    if number < 2:
+        return False
+    
+    # 2 and 3 are prime numbers
+    if number in (2, 3):
+        return True
+    
+    # Check for divisibility by 2 or 3
+    if number % 2 == 0 or number % 3 == 0:
+        return False
+    
+    # Check for divisibility by numbers greater than 3 up to the square root of the input number
+    i = 5
+    while i * i <= number:
+        if number % i == 0 or number % (i + 2) == 0:
+            return False
+        i += 6
+    
+    # If no divisor is found, the number is prime
+    return True
+
+# Example usage
+input_number = int(input("Enter a number: "))
+if is_prime(input_number):
+    print(f"{input_number} is a prime number.")
+else:
+    print(f"{input_number} is not a prime number.")
+
